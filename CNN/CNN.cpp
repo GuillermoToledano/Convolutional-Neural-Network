@@ -9,12 +9,18 @@
 using namespace cv;
 using namespace std;
 using namespace OpenNN;
+using namespace CIFAR10;
+
+typedef unsigned char uchar;
 
 int main()
 {
-    string path = "../batches-bin/data_batch_1.bin";
-    int limit = 1;
-    uint8_t labels[1];
-    CIFAR10::ReadBatch(path, limit, labels);
+    string Path = "../batches-bin/data_batch_1.bin";
+
+    uint8_t Labels[1];
+    OpenNN::Tensor<uchar> Batch;
+    CIFAR10::ReadBatch(Path, Labels, Batch);
+
+
     return 0;
 }
